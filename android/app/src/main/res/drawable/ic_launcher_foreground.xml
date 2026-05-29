@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Outer ring / cloud-like circle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#818CF8"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 54,24 C 37.4,24 24,37.4 24,54 C 24,70.6 37.4,84 54,84 C 70.6,84 84,70.6 84,54 C 84,37.4 70.6,24 54,24 Z" />
+        
+    <!-- Sync arrows -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M 44,38 L 44,46 L 36,46 C 36,46 44,56 44,56 L 52,46 L 44,46 Z" />
+        
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M 64,70 L 64,62 L 72,62 C 72,62 64,52 64,52 L 56,62 L 64,62 Z" />
+        
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M 44,46 C 44,46 54,34 66,42 M 64,62 C 64,62 54,74 42,66" />
+</vector>
