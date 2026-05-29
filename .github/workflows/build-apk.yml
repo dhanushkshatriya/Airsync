@@ -20,14 +20,15 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.4'
 
     - name: Compile Android Project
       working-directory: android
-      run: gradle assembleDebug --no-daemon
+      run: gradle assembleDebug --no-daemon --stacktrace
 
     - name: Upload Downloadable APK Artifact
       uses: actions/upload-artifact@v4
