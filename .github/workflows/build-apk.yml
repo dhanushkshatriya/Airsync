@@ -1,0 +1,38 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    name: Compile & Package APK
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Initialize JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+
+    - name: Compile Android Project
+      working-directory: android
+      run: gradle assembleDebug --no-daemon
+
+    - name: Upload Downloadable APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AirSync-Offline-APK
+        path: android/app/build/outputs/apk/debug/app-debug.apk
+        if-no-files-found: error
+        retention-days: 30
