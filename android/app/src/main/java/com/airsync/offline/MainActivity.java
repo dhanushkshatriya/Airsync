@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         settings.setAllowFileAccess(true);
         settings.setAllowContentAccess(true);
         
+        // CRITICAL FOR ES6 MODULES: Allow file:// origins to fetch other file:// origins
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(true);
+        
         // Enable database caching (IndexedDB compatibility)
         settings.setDatabaseEnabled(true);
 
